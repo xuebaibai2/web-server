@@ -1,7 +1,7 @@
 /**
  * Created by Cayden on 16/5/8.
  */
-module.exports = middleWare = {
+var middleWare = {
     requireAuthentication: function (req, res, next) {
         console.log("Private route hit!");
         next();
@@ -11,3 +11,5 @@ module.exports = middleWare = {
         next();
     }
 };
+
+module.exports = middleWare;

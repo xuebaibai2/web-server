@@ -7,7 +7,6 @@ var PORT = 3000;
 
 var middleWare = require('./middleware.js');
 
-
 app.use(middleWare.logger);
 
 app.get('/about', middleWare.requireAuthentication, function (req, res) {
