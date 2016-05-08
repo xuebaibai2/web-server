@@ -5,25 +5,12 @@ var express = require('express');
 var app = express();
 var PORT = 3000;
 
-var middleWare = {
-    reuireAuthentication: function (req, res, next) {
-        console.log("Private route hit!");
-        next();
-    },
-    logger: function (req, res, next) {
-        console.log('Request: ' +req.method + ' Path: ' + req.originalUrl + ' Date: ' + new Date().toString());
-        next();
-    }
-};
+var middleWare = require('./middleware.js');
 
-// app.use(middleWare.reuireAuthentication);
+
 app.use(middleWare.logger);
 
-// app.get('/', function (req, res) {
-//    res.send("Hello Express");
-// });
-
-app.get('/about', middleWare.reuireAuthentication, function (req, res) {
+app.get('/about', middleWare.requireAuthentication, function (req, res) {
     res.send("This is a page of Cayden Li!!!!");
 });
 
