@@ -24,7 +24,7 @@ app.use(middleWare.logger);
 // });
 
 app.get('/about', middleWare.reuireAuthentication, function (req, res) {
-    res.send("This is a page of Cayden Li!!!");
+    res.send("This is a page of Cayden Li!!!!");
 });
 
 app.use(express.static(__dirname + "/public"));
